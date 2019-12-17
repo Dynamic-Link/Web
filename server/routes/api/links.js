@@ -26,7 +26,6 @@ module.exports = app => {
           utmParameters
         });
         user.save();
-        console.log("user in addlink:", user);
         res.json(user.links[user.links.length - 1]);
       })
       .catch(err => console.log(err));
