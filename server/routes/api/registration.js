@@ -238,7 +238,6 @@ module.exports = app => {
           console.log(err);
           // console.log(token);
         }
-        console.log("user in get", user);
 
         return res.send({
           firstName: user.firstName,
