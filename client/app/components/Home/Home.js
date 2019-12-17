@@ -25,23 +25,6 @@ const Home = props => {
       })
       .then(res => setUser(res.data))
       .catch(err => console.log(err));
-
-    // if (storageToken) {
-    //   setToken(storageToken);
-    //   //verify
-    //   axios
-    //     .get(`${baseURL}/api/account/verify?token=${storageToken}`)
-    //     .then(json => {
-    //       if (json.data.success) {
-    //         setToken(storageToken);
-    //         setLoading(false);
-    //       } else {
-    //         setLoading(false);
-    //       }
-    //     });
-    // } else {
-    //   setLoading(false);
-    // }
   }, [loading]);
 
   const logout = () => {
@@ -69,7 +52,6 @@ const Home = props => {
     <div>
       <Dashboard baseURL={baseURL} token={token} />
       <button onClick={() => logout()}>Log out</button>
-      <button onClick={() => setUser("hey")}>Change user context</button>
     </div>
   );
 };

@@ -157,7 +157,7 @@ module.exports = app => {
     //Get the token
     const { headers } = req;
     const { token } = headers;
-    console.log("verify token:", token);
+    // console.log("verify token:", token);
     //?token = test
     //Verify the token is one of a kind and its not deleted
     UserSession.find(
@@ -222,7 +222,7 @@ module.exports = app => {
   app.get("/api/account/getUser", (req, res, next) => {
     //Get the token
     const { headers } = req;
-    console.log("headers:", headers);
+    // console.log("headers:", headers);
 
     const { token } = headers;
     //?token = test
@@ -231,13 +231,14 @@ module.exports = app => {
         _id: token
       },
       (err, users) => {
-        console.log("users:", users);
+        // console.log("users:", users);
         const user = users[0];
-        console.log("user:", user);
+        // console.log("user:", user);
         if (err) {
           console.log(err);
-          console.log(token);
+          // console.log(token);
         }
+        console.log("user in get", user);
 
         return res.send({
           firstName: user.firstName,

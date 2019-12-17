@@ -1,6 +1,33 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
+const LinkSchema = new mongoose.Schema({
+  linkName: {
+    type: String,
+    default: ""
+  },
+  product: {
+    type: String,
+    default: ""
+  },
+  promotions: {
+    type: String,
+    default: ""
+  },
+  notes: {
+    type: String,
+    default: ""
+  },
+  defaultUrl: {
+    type: String,
+    default: ""
+  },
+  utmParameters: {
+    type: String,
+    default: ""
+  }
+});
+
 const UserSchema = new mongoose.Schema({
   firstName: {
     type: String,
@@ -18,10 +45,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: ""
   },
-  links: {
-    type: Array,
-    default: []
-  },
+  links: [LinkSchema],
   isDeleted: {
     type: Boolean,
     default: false
